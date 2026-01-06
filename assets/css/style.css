@@ -1,0 +1,343 @@
+/* Global Styles */
+body {
+  background-color: rgba(45, 44, 46);
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+/* Team Crest */
+.crest {
+  margin-top: 60px;
+  width: 80px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+/* Team Logo */
+.insight {
+  width: 270px;
+  max-width: 90%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Paragraphs */
+.p1 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.p2 {
+  font-size: 0.9rem;
+  font-weight: lighter;
+  color: #9db8ff;
+  margin-bottom: 20px;
+}
+
+/* Icons */
+.mic-icon {
+  margin-left: 8px;
+  font-size: 20px;
+  color: #9db8ff;
+}
+
+.sparkle-icon {
+  margin-right: 8px;
+  color: #9db8ff;
+  font-size: 18px;
+}
+
+/* Welcome Text */
+.welcome {
+  margin-top: 50px;
+  font-size: 1.1rem;
+  color: #9db8ff;
+  font-weight: bold;
+}
+
+/* Tap Button */
+.tap {
+  text-decoration: underline;
+  color: #9db8ff;
+  margin-top: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.tap:hover {
+  color: #ffffff;
+}
+
+/* Microphone Image (if used separately) */
+.mic {
+  height: 300px;
+  width: 300px;
+  margin-top: 40px;
+}
+
+/* Permission Page */
+.permission {
+  font-size: 25px;
+}
+
+.accept {
+  margin-right: 180px;
+  font-size: 13px;
+  margin-top: 370px;
+  color: #9db8ff;
+  cursor: pointer;
+}
+.decline {
+  margin-right: 180px;
+  font-size: 13px;
+  color: #9db8ff;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .crest {
+    width: 60px;
+    margin-top: 50px;
+  }
+
+  .insight {
+    width: 220px;
+    margin-bottom: 15px;
+  }
+
+  .p1 {
+    font-size: 1.2rem;
+  }
+
+  .p2 {
+    font-size: 0.8rem;
+  }
+
+  .welcome {
+    font-size: 1rem;
+    margin-top: 30px;
+  }
+
+  .tap {
+    font-size: 0.9rem;
+  }
+
+  .accept {
+    margin-right: 180px;
+    font-size: 13px;
+    margin-top: 370px;
+  }
+  .decline {
+    margin-right: 180px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .crest {
+    width: 50px;
+    margin-top: 40px;
+  }
+
+  .insight {
+    width: 180px;
+    margin-bottom: 10px;
+  }
+
+  .p1 {
+    font-size: 28px;
+  }
+
+  .p2 {
+    font-size: 15px;
+  }
+
+  .welcome {
+    font-size: 0.9rem;
+    margin-top: 430px;
+    margin-bottom: 5px;
+  }
+
+  .tap {
+    font-size: 0.8rem;
+    margin-top: 5px;
+  }
+
+  .accept {
+    margin-right: 180px;
+    font-size: 13px;
+    margin-top: 370px;
+  }
+  .decline {
+    margin-right: 180px;
+    font-size: 13px;
+  }
+}
+.sign-up {
+  color: #9db8ff;
+  font-size: 30px;
+  margin-top: 30px;
+}
+.passkey {
+  color: #9db8ff;
+  font-size: 15px;
+  margin-top: 40px;
+}
+
+/* Passkey Form */
+.passkey-form {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Input container */
+.passkey-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #9db8ff;
+  border-radius: 14px;
+
+  padding: 10px 14px;
+  width: 260px;
+}
+
+/* Lock icon */
+.passkey-input i {
+  color: #9db8ff;
+  font-size: 16px;
+}
+
+/* Input field */
+.passkey-input input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Placeholder */
+.passkey-input input::placeholder {
+  color: rgba(157, 184, 255, 0.7);
+}
+
+/* Focus state (industry standard) */
+.passkey-input:focus-within {
+  border-color: #ffffff;
+}
+
+/* Remove default link styling */
+.welcome-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Welcome Button */
+.welcome-btn {
+  margin-top: 170px;
+  padding: 12px 32px;
+
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  color: #2d2c2e;
+  background: #9db8ff;
+
+  border: none;
+  border-radius: 16px;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  box-shadow: 0 8px 18px rgba(157, 184, 255, 0.25);
+}
+
+/* Hover state */
+.welcome-btn:hover {
+  background: #ffffff;
+  box-shadow: 0 10px 22px rgba(157, 184, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Active (click) state */
+.welcome-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(157, 184, 255, 0.2);
+}
+
+/* Focus (accessibility) */
+.welcome-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(157, 184, 255, 0.4);
+}
+
+/* Quit hint */
+.quit-hint {
+  position: fixed;
+  bottom: 24px; /* spacing from bottom */
+  left: 24px; /* spacing from left */
+
+  font-size: 13px;
+  color: rgba(157, 184, 255, 0.8);
+
+  /* user-select: none; */
+  pointer-events: none; /* prevents accidental clicks */
+
+  letter-spacing: 0.3px;
+}
+.sign-in {
+  color: #9db8ff;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+/* Forgot password link */
+.forgot-password {
+  position: fixed;
+  bottom: 24px; /* spacing from bottom */
+  right: 24px; /* spacing from right */
+
+  font-size: 13px;
+  color: #9db8ff;
+  text-decoration: none;
+
+  letter-spacing: 0.3px;
+  transition: color 0.2s ease;
+}
+
+/* Hover */
+.forgot-password:hover {
+  color: #ffffff;
+}
+
+/* Focus (accessibility) */
+.forgot-password:focus {
+  outline: none;
+  text-decoration: underline;
+}
+.tap1 {
+  text-decoration: none;
+  color: #9db8ff;
+}

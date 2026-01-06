@@ -1,0 +1,72 @@
+/* --- Container --- */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100%;
+  background-color: rgba(45, 44, 46);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  position: relative;
+}
+
+/* --- Virtual Assistant Image --- */
+.assistant-img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+/* --- Instruction Text --- */
+.instruction-text {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  color: #9db8ff;
+}
+
+/* --- Voice Button --- */
+.voice-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  background-color: #007bff; /* Blue button */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.voice-btn.recording {
+  background-color: #0056b3; /* Darker blue when recording */
+  transform: scale(1.1);
+}
+
+/* --- Voice Status Text --- */
+.voice-status {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #9db8ff;
+}
+
+/* --- Home Link --- */
+.home-link {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  font-size: 1rem;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.home-link:focus,
+.home-link:hover {
+  text-decoration: underline;
+}

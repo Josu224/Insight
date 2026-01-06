@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="/assets/css/settings.css" />
+    <link rel="stylesheet" href="/assets/css/back-button.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="page-title">Settings</h1>
+
+      <!-- Settings Card -->
+      <div class="card" id="voice-card">
+        <h2>Voice & Speech</h2>
+        <label for="voice-sensitivity">Recognition Sensitivity</label>
+        <input
+          type="range"
+          id="voice-sensitivity"
+          min="0"
+          max="100"
+          value="50"
+        />
+
+        <label for="tts-voice">TTS Voice</label>
+        <select id="tts-voice">
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+          <option value="neutral">Neutral</option>
+        </select>
+
+        <label for="tts-speed">TTS Speed</label>
+        <input
+          type="range"
+          id="tts-speed"
+          min="0.5"
+          max="2"
+          step="0.1"
+          value="1"
+        />
+
+        <label for="language">Language/Accent</label>
+        <select id="language">
+          <option value="en-US">English (US)</option>
+          <option value="en-GB">English (UK)</option>
+          <option value="es-ES">Spanish</option>
+          <option value="fr-FR">French</option>
+        </select>
+      </div>
+
+      <div class="card" id="display-card">
+        <h2>Display & Accessibility</h2>
+        <label for="theme">Theme</label>
+        <select id="theme">
+          <option value="dark">Dark</option>
+          <option value="light">Light</option>
+          <option value="high-contrast">High Contrast</option>
+        </select>
+
+        <label for="font-size">Font Size</label>
+        <input type="range" id="font-size" min="12" max="32" value="16" />
+
+        <label for="accent-color">Accent Color</label>
+        <input type="color" id="accent-color" value="#1E90FF" />
+      </div>
+
+      <div class="card" id="navigation-card">
+        <h2>Navigation Preferences</h2>
+        <label>
+          <input type="checkbox" id="audio-only" /> Audio-only Navigation
+        </label>
+
+        <label for="distance-unit">Distance Unit</label>
+        <select id="distance-unit">
+          <option value="km">Kilometers</option>
+          <option value="miles">Miles</option>
+        </select>
+
+        <label for="route-type">Preferred Route Type</label>
+        <select id="route-type">
+          <option value="shortest">Shortest</option>
+          <option value="safest">Safest</option>
+          <option value="accessible">Accessible</option>
+        </select>
+      </div>
+
+      <div class="card" id="notifications-card">
+        <h2>Notifications & Alerts</h2>
+        <label>
+          <input type="checkbox" id="sound-alerts" /> Sound Alerts
+        </label>
+
+        <label>
+          <input type="checkbox" id="haptic-feedback" /> Haptic Feedback
+        </label>
+
+        <label for="volume">Volume</label>
+        <input type="range" id="volume" min="0" max="1" step="0.1" value="1" />
+      </div>
+
+      <div class="card" id="privacy-card">
+        <h2>Privacy & Security</h2>
+        <label>
+          <input type="checkbox" id="mic-access" /> Microphone Access
+        </label>
+
+        <label>
+          <input type="checkbox" id="data-sharing" /> Data Sharing
+        </label>
+
+        <button id="clear-history" class="action-btn">Clear App History</button>
+      </div>
+
+      <div class="card" id="behavior-card">
+        <h2>App Behavior & Shortcuts</h2>
+        <label for="default-home">Default Home Page</label>
+        <select id="default-home">
+          <option value="home.html">Home</option>
+          <option value="navigation.html">Navigation</option>
+          <option value="assistant.html">Assistant</option>
+        </select>
+
+        <label for="long-press-duration">Long Press Duration (ms)</label>
+        <input
+          type="number"
+          id="long-press-duration"
+          min="100"
+          max="2000"
+          value="300"
+        />
+
+        <label>
+          <input type="checkbox" id="quick-actions" /> Enable Quick Actions
+        </label>
+      </div>
+
+      <div class="card" id="about-card">
+        <h2>About & Help</h2>
+        <p>App Version: 1.0.0</p>
+        <button id="voice-help" class="action-btn">Voice Guided Help</button>
+        <button id="contact-support" class="action-btn">Contact Support</button>
+      </div>
+
+      <!-- Home link -->
+      <!-- <p id="homeLink" class="home-link" tabindex="0">Back to Home</p> -->
+    </div>
+
+    <script src="/assets/js/settings.js"></script>
+    <script src="/assets/js/back-button.js"></script>
+  </body>
+</html>

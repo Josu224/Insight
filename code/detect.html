@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Detection</title>
+    <link rel="stylesheet" href="/assets/css/detect.css" />
+    <link rel="stylesheet" href="/assets/css/back-button.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Page Title -->
+      <h1 class="page-title">Object Detection</h1>
+
+      <!-- Camera Feed -->
+      <div class="camera-container">
+        <video id="video" autoplay playsinline></video>
+        <canvas id="overlay"></canvas>
+      </div>
+
+      <!-- Detection Controls -->
+      <div class="controls">
+        <label for="confidence">Confidence Threshold:</label>
+        <input
+          type="range"
+          id="confidence"
+          min="0"
+          max="1"
+          step="0.05"
+          value="0.5"
+        />
+
+        <label for="category">Detect Category:</label>
+        <select id="category">
+          <option value="all">All</option>
+          <option value="person">Person</option>
+          <option value="vehicle">Vehicle</option>
+          <option value="animal">Animal</option>
+          <option value="furniture">Furniture</option>
+        </select>
+
+        <label for="ttsVoice">TTS Voice:</label>
+        <select id="ttsVoice"></select>
+
+        <label for="ttsSpeed">TTS Speed:</label>
+        <input
+          type="range"
+          id="ttsSpeed"
+          min="0.5"
+          max="2"
+          step="0.1"
+          value="1"
+        />
+
+        <label>
+          <input type="checkbox" id="audioOnly" />
+          Audio-only mode
+        </label>
+      </div>
+
+      <!-- Snapshots / History -->
+      <div class="history">
+        <h2>Detection History</h2>
+        <ul id="historyList"></ul>
+      </div>
+
+      <!-- Back to Home Button -->
+      <!-- <p id="homeBtn" class="back-btn">Back to Home</p> -->
+    </div>
+
+    <script src="/assets/js/detect.js"></script>
+    <script src="/assets/js/back-button.js"></script>
+  </body>
+</html>

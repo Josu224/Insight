@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: rgba(45, 44, 46);
+  color: #ffffff;
+}
+
+.container {
+  padding: 24px;
+  max-width: 720px;
+  margin: auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-size: 1.1rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 140px;
+  font-size: 1.1rem;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+}
+
+input[type="file"] {
+  font-size: 1rem;
+  margin-top: 6px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+button {
+  flex: 1;
+  padding: 14px;
+  font-size: 1.05rem;
+  background: #4da3ff;
+  border: none;
+  border-radius: 8px;
+  color: #000;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 3px solid #fff;
+}
+
+.settings {
+  margin-top: 20px;
+}
+
+.settings label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+select,
+input[type="range"] {
+  width: 100%;
+  margin-top: 6px;
+}
+
+.status {
+  margin-top: 14px;
+  font-size: 1rem;
+}
+
+.back-home {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  color: #4da3ff;
+  font-size: 1rem;
+  text-decoration: none;
+}

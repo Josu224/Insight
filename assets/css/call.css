@@ -1,0 +1,61 @@
+/* Call page styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgba(45, 44, 46);
+  color: #9db8ff;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.call-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0 0 3rem 0;
+}
+
+.call-list li {
+  background-color: #ffa500;
+  margin-bottom: 0.8rem;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.2s;
+}
+
+.call-list li:focus,
+.call-list li:hover {
+  background-color: #a3c4f3;
+  transform: scale(0.97);
+  outline: none;
+}
+
+.home-link {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #1e90ff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.home-link:hover,
+.home-link:focus {
+  text-decoration: underline;
+  outline: none;
+}

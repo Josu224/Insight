@@ -1,0 +1,226 @@
+/* ============================================
+   UNIFIED BACK-TO-HOME BUTTON SYSTEM
+   For consistent accessibility across all pages
+============================================ */
+
+/* Base back button styles - APPLY TO ALL PAGES */
+.back-to-home {
+  /* Positioning */
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+
+  /* Visual styling */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #9db8ff, #7aa7ff);
+  color: #2d2c2e !important;
+  text-decoration: none;
+  border: none;
+  border-radius: 50px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+
+  /* Animation */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: center;
+  box-shadow: 0 4px 15px rgba(157, 184, 255, 0.3), 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* Accessibility */
+  outline: none;
+  /* user-select: none; */
+}
+
+/* Hover state */
+.back-to-home:hover {
+  background: linear-gradient(135deg, #7aa7ff, #5c96ff);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(157, 184, 255, 0.4), 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Focus state (keyboard navigation) */
+.back-to-home:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+  background: linear-gradient(135deg, #5c96ff, #3e85ff);
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 0 0 0 4px rgba(157, 184, 255, 0.5);
+}
+
+/* Active/pressed state */
+.back-to-home:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 2px 8px rgba(157, 184, 255, 0.2),
+    inset 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s ease;
+}
+
+/* Disabled state */
+.back-to-home:disabled {
+  background: #666;
+  color: #999 !important;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  opacity: 0.7;
+}
+
+/* Icon styling */
+.back-to-home i {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.back-to-home:hover i {
+  transform: translateX(-2px);
+}
+
+/* Animation for page entrance */
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.back-to-home.page-entrance {
+  animation: slideInFromLeft 0.5s ease-out forwards;
+}
+
+/* Pulse animation for attention */
+@keyframes gentlePulse {
+  0%,
+  100% {
+    box-shadow: 0 4px 15px rgba(157, 184, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(157, 184, 255, 0.6);
+  }
+}
+
+.back-to-home.pulse {
+  animation: gentlePulse 2s infinite;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .back-to-home {
+    border: 2px solid #ffffff;
+    background: #000000;
+    color: #ffffff !important;
+  }
+
+  .back-to-home:hover {
+    background: #333333;
+  }
+}
+
+/* Dark theme variables */
+:root {
+  --back-btn-bg: linear-gradient(135deg, #9db8ff, #7aa7ff);
+  --back-btn-text: #2d2c2e;
+  --back-btn-shadow: rgba(157, 184, 255, 0.3);
+}
+
+/* Light theme support */
+.light-theme .back-to-home {
+  background: linear-gradient(135deg, #3e85ff, #1a6eff);
+  color: #ffffff !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .back-to-home {
+    bottom: 16px;
+    left: 16px;
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .back-to-home i {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-to-home {
+    bottom: 12px;
+    left: 12px;
+    padding: 8px 14px;
+    font-size: 13px;
+    border-radius: 40px;
+  }
+
+  /* For very small screens, make it a circle */
+  @media (max-height: 600px) {
+    .back-to-home {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      padding: 0;
+      justify-content: center;
+    }
+
+    .back-to-home span {
+      display: none;
+    }
+
+    .back-to-home i {
+      font-size: 20px;
+      margin: 0;
+    }
+  }
+}
+
+/* Print styles - hide button when printing */
+@media print {
+  .back-to-home {
+    display: none !important;
+  }
+}
+
+/* Screen reader only text */
+.back-to-home .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Status message for voice feedback */
+.back-status-message {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+  max-width: 250px;
+  border: 1px solid #9db8ff;
+}
+
+.back-status-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}

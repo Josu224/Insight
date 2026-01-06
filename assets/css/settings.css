@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgba(45, 44, 46);
+  color: #fff;
+}
+
+.page-title {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: rgba(60, 59, 60, 0.95);
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+input[type="range"],
+input[type="number"],
+select,
+input[type="color"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.action-btn {
+  background-color: #1e90ff;
+  border: none;
+  color: #fff;
+  padding: 10px 15px;
+  margin: 5px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.1s;
+}
+
+.action-btn:hover,
+.action-btn:focus {
+  transform: scale(1.05);
+  outline: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push last element to bottom */
+  min-height: 100vh; /* Make container fill the screen */
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.home-link {
+  align-self: flex-start; /* bottom-left corner inside container */
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-top: 20px; /* space from elements above */
+  color: #1e90ff;
+}
+
+.home-link:focus {
+  outline: 2px solid #1e90ff;
+}

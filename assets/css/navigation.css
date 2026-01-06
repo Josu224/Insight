@@ -1,0 +1,116 @@
+/* Basic resets */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgba(45, 44, 46);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  text-align: center;
+  padding: 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+#instructions {
+  font-size: 1.2rem;
+  color: #9db8ff;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+#voiceBtn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #9db8ff;
+  border: none;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  transition: transform 0.1s;
+}
+
+#voiceBtn.recording {
+  background-color: #d32f2f;
+  transform: scale(1.1);
+}
+
+#voiceStatus {
+  margin-bottom: 1rem;
+}
+
+#map {
+  width: 100%;
+  max-width: 600px;
+  height: 400px;
+  border: 2px solid #fff;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+#destInput,
+#goBtn {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin-top: 0.5rem;
+}
+
+#destInput {
+  width: 70%;
+  border: 1px solid #ccc;
+}
+
+#goBtn {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+#goBtn:hover {
+  background-color: #388e3c;
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.home-link {
+  color: #1a73e8;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 10px;
+  text-decoration: underline;
+}
+
+.home-link:focus {
+  outline: 3px solid #1a73e8;
+  outline-offset: 2px;
+}

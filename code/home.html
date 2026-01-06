@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INSIGHT</title>
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="/assets/css/home.css" />
+  </head>
+
+  <body>
+    <!-- Main vertical layout wrapper -->
+    <div class="main">
+      <!-- Record button + helper text -->
+      <div class="record-wrapper">
+        <!-- Recording Button -->
+        <button id="voiceBtn" class="record" aria-label="Hold to record audio">
+          <svg class="mic-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path
+              d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 14 0h-2zM11 19h2v3h-2z"
+            />
+          </svg>
+        </button>
+
+        <!-- Instruction / Status Text -->
+        <p id="voiceStatus" class="hold">
+          <i class="fa-solid fa-wand-magic-sparkles sparkle-icon"></i>
+          Hold and speak to select choice
+        </p>
+      </div>
+
+      <!-- Action buttons grid -->
+      <div class="actions">
+        <button id="navigateBtn" class="action-btn" aria-label="Navigate">
+          <i class="fa-solid fa-location-arrow"></i>
+          <span>Navigate</span>
+        </button>
+
+        <button id="assistantBtn" class="action-btn" aria-label="Assistant">
+          <i class="fa-solid fa-robot"></i>
+          <span>Assistant</span>
+        </button>
+
+        <button id="callBtn" class="action-btn" aria-label="Call">
+          <i class="fa-solid fa-phone"></i>
+          <span>Call</span>
+        </button>
+
+        <button id="settingsBtn" class="action-btn" aria-label="Settings">
+          <i class="fa-solid fa-gear"></i>
+          <span>Settings</span>
+        </button>
+
+        <button id="detectBtn" class="action-btn" aria-label="Detect">
+          <i class="fa-solid fa-eye"></i>
+          <span>Detect</span>
+        </button>
+
+        <button
+          id="translateBtn"
+          class="action-btn"
+          aria-label="Text Translate"
+        >
+          <i class="fa-solid fa-language"></i>
+          <span>Translate</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom-left informational text -->
+    <p class="decline">
+      <i class="fa-solid fa-wand-magic-sparkles sparkle-icon"></i>
+      Tap twice to decline
+    </p>
+
+    <!-- JavaScript for navigation/actions -->
+    <script src="/assets/js/home.js"></script>
+
+    <!-- Stop action -->
+    <script src="/assets/js/home-extra.js"></script>
+  </body>
+</html>

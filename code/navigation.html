@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessible Navigation</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="/assets/css/navigation.css" />
+    <link rel="stylesheet" href="/assets/css/back-button.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="title">Accessible Navigation</h1>
+      <p id="instructions">
+        Hold your phone facing forward and tap the microphone to speak your
+        destination.
+      </p>
+    </header>
+
+    <main>
+      <!-- Voice command button -->
+      <button
+        id="voiceBtn"
+        aria-label="Hold to speak destination"
+        title="Hold to speak"
+      >
+        🎤
+      </button>
+      <p id="voiceStatus" aria-live="polite">
+        Tap and hold to speak your destination
+      </p>
+
+      <!-- Map -->
+      <div id="map"></div>
+
+      <!-- Destination input fallback -->
+      <label for="destInput" class="sr-only">Enter destination</label>
+      <input type="text" id="destInput" placeholder="Or type destination..." />
+      <button id="goBtn">Go</button>
+    </main>
+    <!-- <p id="homeLink" class="home-link" tabindex="0">Go to Home</p> -->
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="/assets/js/navigation.js"></script>
+    <script src="/assets/js/back-button.js"></script>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+/* Centering helper (optional) */
+body {
+  background-color: rgba(45, 44, 46);
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  color: white;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Record button */
+.record {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: none;
+  background: #9db8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Press / hold feedback */
+.record:active {
+  transform: scale(0.94);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4), inset 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Focus state (keyboard accessibility) */
+.record:focus-visible {
+  outline: 3px solid #9db8ff;
+  outline-offset: 4px;
+}
+
+/* Wrapper aligns button + text vertically */
+.record-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Instruction text */
+.hold {
+  margin-top: 16px; /* space below button */
+  font-size: 14px;
+  color: #9db8ff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  /* user-select: none; */
+}
+
+/* Sparkle icon styling */
+.sparkle-icon {
+  font-size: 14px;
+  color: #9db8ff;
+}
+
+/* Mic icon */
+.mic-icon {
+  width: 42px;
+  height: 42px;
+  fill: #ffffff;
+  pointer-events: none; /* prevents accidental selection */
+}
+
+/* Action buttons container */
+.actions {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 360px;
+}
+
+/* Individual action button */
+.action-btn {
+  aspect-ratio: 1 / 1; /* perfect square */
+  border-radius: 16px;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: transform 0.15s ease, background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+/* Icons */
+.action-btn i {
+  font-size: 22px;
+  color: #d0d0d0;
+}
+
+/* Hover (desktop) */
+.action-btn:hover {
+  background: #222;
+  border-color: #3a3a3a;
+}
+
+/* Active / press feedback */
+.action-btn:active {
+  transform: scale(0.96);
+}
+
+/* Focus (keyboard accessibility) */
+.action-btn:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.4);
+  outline-offset: 3px;
+}
+/* Main vertical layout wrapper */
+.main {
+  display: flex;
+  flex-direction: column; /* STACKS content vertically */
+  align-items: center;
+  width: 100%;
+}
+
+/* Bottom-left fixed notice */
+.decline {
+  position: fixed; /* stays in place while scrolling */
+  bottom: 16px; /* spacing from bottom */
+  left: 16px; /* spacing from left */
+  font-size: 14px;
+  color: #9db8ff; /* same as your primary accent */
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 6px 12px;
+  border-radius: 8px;
+  pointer-events: none; /* optional: text is informational, not clickable */
+  z-index: 1000; /* ensures it's above other elements */
+}
+/* Pulse red effect while recording */
+.record.recording {
+  background: #ff4d4d; /* red while recording */
+  box-shadow: 0 0 20px #ff4d4d, 0 0 40px #ff4d4d66;
+  transition: background 0.2s, box-shadow 0.2s;
+}

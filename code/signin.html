@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <p class="sign-in">SIGN IN</p>
+    <p class="passkey">
+      <i class="fa-solid fa-wand-magic-sparkles sparkle-icon"></i>
+      Call out four phrases to confirm your passkey
+    </p>
+    <!-- Passkey Form -->
+    <form class="passkey-form">
+      <div class="passkey-input">
+        <i class="fa-solid fa-lock"></i>
+        <input
+          type="password"
+          placeholder="Enter passkey"
+          aria-label="Passkey"
+          required
+        />
+      </div>
+    </form>
+
+    <!-- Forgot Password -->
+    <a href="forgot-password.html" class="forgot-password">
+      Forgot password?
+    </a>
+
+    <!-- welcome button -->
+    <a href="/code/home.html" class="welcome-link">
+      <button class="welcome-btn">Welcome</button>
+    </a>
+    <div class="quit-hint">Double tap to quit</div>
+
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
