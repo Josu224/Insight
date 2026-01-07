@@ -14,29 +14,34 @@ function speak(text) {
 }
 
 // Handle submit
-submitBtn.addEventListener("click", () => {
-  const email = emailInput.value.trim();
-  if (!email) {
-    statusMsg.textContent = "Please enter a valid email address.";
-    speak("Please enter a valid email address.");
-    return;
-  }
+if (submitBtn && emailInput && statusMsg) {
+  submitBtn.addEventListener("click", () => {
+    const email = emailInput.value.trim();
+    if (!email) {
+      statusMsg.textContent = "Please enter a valid email address.";
+      speak("Please enter a valid email address.");
+      return;
+    }
 
-  // Simulate sending reset link (replace with real API)
-  statusMsg.textContent = `Reset link sent to ${email}. Check your inbox.`;
-  speak(`Reset link sent to ${email}. Check your inbox.`);
-  emailInput.value = "";
-});
+    // Simulate sending reset link (replace with real API)
+    statusMsg.textContent = `Reset link sent to ${email}. Check your inbox.`;
+    speak(`Reset link sent to ${email}. Check your inbox.`);
+    emailInput.value = "";
+  });
 
-// Enter key support for accessibility
-emailInput.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") submitBtn.click();
-});
+  // Enter key support for accessibility
+  emailInput.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") submitBtn.click();
+  });
+}
 
 // Back to Sign In navigation
-backBtn.addEventListener("click", () => {
-  window.location.href = "code/signin.html"; // Relative path
-});
-backBtn.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") window.location.href = "code/signin.html"; // Relative path
-});
+if (backBtn) {
+  backBtn.addEventListener("click", () => {
+    window.location.href = "signin.html";
+  });
+
+  backBtn.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") window.location.href = "signin.html";
+  });
+}

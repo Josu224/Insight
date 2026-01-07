@@ -33,23 +33,39 @@ document.querySelectorAll("input, select, button").forEach((el) => {
 });
 
 // Clear history
-document.getElementById("clear-history").addEventListener("click", () => {
-  localStorage.clear();
-  speak("App history cleared");
-});
+const clearHistoryBtn = document.getElementById("clear-history");
+if (clearHistoryBtn) {
+  clearHistoryBtn.addEventListener("click", () => {
+    localStorage.clear();
+    speak("App history cleared");
+  });
+}
 
 // Voice Help
-document.getElementById("voice-help").addEventListener("click", () => {
-  speak("This is voice guided help. Use tab to navigate and Enter to select.");
-});
+const voiceHelpBtn = document.getElementById("voice-help");
+if (voiceHelpBtn) {
+  voiceHelpBtn.addEventListener("click", () => {
+    speak(
+      "This is voice guided help. Use tab to navigate and Enter to select."
+    );
+  });
+}
 
 // Contact Support
-document.getElementById("contact-support").addEventListener("click", () => {
-  speak("Contact support via email at support@example.com");
-});
+const contactSupportBtn = document.getElementById("contact-support");
+if (contactSupportBtn) {
+  contactSupportBtn.addEventListener("click", () => {
+    speak("Contact support via email at support@example.com");
+  });
+}
 
-// Home navigation
-homeLink.addEventListener("click", () => (window.location.href = "home.html"));
-homeLink.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") window.location.href = "home.html";
-});
+// Home navigation - WITH SAFETY CHECK
+if (homeLink) {
+  homeLink.addEventListener(
+    "click",
+    () => (window.location.href = "home.html")
+  );
+  homeLink.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") window.location.href = "home.html";
+  });
+}

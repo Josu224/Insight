@@ -101,8 +101,10 @@ function speak(text) {
 // Loop detection
 setInterval(detectObjects, 5000); // every 5s
 
-// Home button
-homeBtn.addEventListener("click", () => (window.location.href = "home.html"));
-homeBtn.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") window.location.href = "home.html";
-});
+// Home button - WITH SAFETY CHECK
+if (homeBtn) {
+  homeBtn.addEventListener("click", () => (window.location.href = "home.html"));
+  homeBtn.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") window.location.href = "home.html";
+  });
+}

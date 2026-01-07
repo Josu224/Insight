@@ -92,9 +92,12 @@ function speak(text) {
 }
 
 // --- Home link navigation ---
-homeLink.addEventListener("click", () => {
-  window.location.href = "home.html";
-});
-homeLink.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") window.location.href = "home.html";
-});
+// Only add event listeners if homeLink exists
+if (homeLink) {
+  homeLink.addEventListener("click", () => {
+    window.location.href = "home.html";
+  });
+  homeLink.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") window.location.href = "home.html";
+  });
+}

@@ -121,15 +121,18 @@ function setDestination(dest) {
   speak(`Destination set to ${dest}. Please follow the directions.`);
 }
 
+// --- Home link navigation ---
 const homeLink = document.getElementById("homeLink");
 
-homeLink.addEventListener("click", () => {
-  window.location.href = "home.html"; // change to your home page path
-});
-
-// Optional: allow Enter key to trigger navigation
-homeLink.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
+if (homeLink) {
+  homeLink.addEventListener("click", () => {
     window.location.href = "home.html";
-  }
-});
+  });
+
+  // Optional: allow Enter key to trigger navigation
+  homeLink.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      window.location.href = "home.html";
+    }
+  });
+}
