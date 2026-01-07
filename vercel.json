@@ -1,18 +1,5 @@
 {
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/code/index.html"
-    },
-    {
-      "source": "/:page",
-      "destination": "/code/:page.html"
-    },
-    {
-      "source": "/assets/:path*",
-      "destination": "/assets/:path*"
-    }
-  ],
-  "cleanUrls": true,
+  "public": true,
+  "cleanUrls": false,
   "trailingSlash": false
 }
