@@ -567,7 +567,7 @@ function initDoubleTapQuit() {
   document.head.appendChild(styleSheet);
 }
 
-// 2. PASSKEY VALIDATION
+// 2. PASSKEY VALIDATION - UPDATED FOR 4-LETTER PASSKEY
 function initPasskeyValidation() {
   const passkeyInputs = document.querySelectorAll(".passkey-input input");
 
@@ -600,18 +600,17 @@ function initPasskeyValidation() {
     const firstValue = first.value.trim();
     const secondValue = second.value.trim();
 
-    // Check word count (should be exactly 4 words)
-    const wordCount = firstValue
-      .split(/\s+/)
-      .filter((word) => word.length > 0).length;
-
-    if (firstValue && wordCount !== 4) {
-      showPasskeyError(first, "Passkey must be exactly 4 words");
+    // Check for exactly 4 letters
+    if (
+      firstValue &&
+      (firstValue.length !== 4 || !/^[A-Za-z]{4}$/.test(firstValue))
+    ) {
+      showPasskeyError(first, "Passkey must be exactly 4 letters (A-Z)");
       return false;
     }
 
-    // Clear error if word count is correct
-    if (wordCount === 4) {
+    // Clear error if length is correct
+    if (firstValue.length === 4 && /^[A-Za-z]{4}$/.test(firstValue)) {
       clearPasskeyError(first);
     }
 
@@ -684,13 +683,10 @@ function initPasskeyValidation() {
       return false;
     }
 
-    // Validate word count
-    const wordCount = firstPasskey.value
-      .trim()
-      .split(/\s+/)
-      .filter((word) => word.length > 0).length;
-    if (wordCount !== 4) {
-      speakFeedback("Passkey must be exactly 4 words");
+    // Validate 4 letters
+    const firstValue = firstPasskey.value.trim();
+    if (firstValue.length !== 4 || !/^[A-Za-z]{4}$/.test(firstValue)) {
+      speakFeedback("Passkey must be exactly 4 letters (A-Z)");
       return false;
     }
 
@@ -836,7 +832,7 @@ function initAccessibilityFeatures() {
   document.head.appendChild(styleSheet);
 }
 
-// 4. VOICE GUIDANCE SYSTEM
+// 4. VOICE GUIDANCE SYSTEM - UPDATED FOR 4-LETTER PASSKEY
 function initVoiceGuidance() {
   // Status message element for voice feedback
   let statusMessage = document.getElementById("voiceStatus");
@@ -934,7 +930,7 @@ function initVoiceGuidance() {
   // Speak welcome message on page load
   setTimeout(() => {
     speakFeedback(
-      "Sign up page loaded. Create a four word passkey for your account. Double tap the quit hint at bottom left to exit."
+      "Sign up page loaded. Create a 4-letter passkey for your account. Double tap the quit hint at bottom left to exit."
     );
   }, 1000);
 
@@ -943,22 +939,18 @@ function initVoiceGuidance() {
   passkeyInputs.forEach((input, index) => {
     input.addEventListener("focus", function () {
       if (index === 0) {
-        speakFeedback(
-          "Enter your four word passkey. Example: correct horse battery staple"
-        );
+        speakFeedback("Enter your 4-letter passkey. Example: ABCD");
       } else {
-        speakFeedback("Repeat your four word passkey to confirm");
+        speakFeedback("Confirm your 4-letter passkey");
       }
     });
 
     input.addEventListener("input", function () {
-      const wordCount = this.value
-        .trim()
-        .split(/\s+/)
-        .filter((word) => word.length > 0).length;
+      const value = this.value.trim();
+      const length = value.length;
 
-      if (wordCount === 4) {
-        speakFeedback("Four words entered. Good passkey length");
+      if (length === 4 && /^[A-Za-z]{4}$/.test(value)) {
+        speakFeedback("4 letters entered. Good passkey");
       }
     });
   });
@@ -1086,7 +1078,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (passkeyInput) {
       passkeyInput.focus();
       speakFeedback(
-        "Sign in page. Enter your four word passkey or use voice input. Double tap the quit hint at bottom left to exit."
+        "Sign in page. Enter your 4-letter passkey or use voice input. Double tap the quit hint at bottom left to exit."
       );
     }
   }, 800);
@@ -1259,14 +1251,14 @@ function initDoubleTapQuit() {
   document.head.appendChild(styleSheet);
 }
 
-// 2. SIGNIN VALIDATION
+// 2. SIGNIN VALIDATION - UPDATED FOR 4-LETTER PASSKEY
 function initSigninValidation() {
   const passkeyInput = document.querySelector(".passkey-input input");
   const welcomeBtn = document.querySelector(".welcome-btn");
 
   if (!passkeyInput || !welcomeBtn) return;
 
-  // Word count validation
+  // Letter count validation
   passkeyInput.addEventListener("input", function () {
     validatePasskey(this);
   });
@@ -1275,7 +1267,7 @@ function initSigninValidation() {
   welcomeBtn.addEventListener("click", function (e) {
     if (!validateSigninForm()) {
       e.preventDefault();
-      speakFeedback("Please enter a valid four word passkey");
+      speakFeedback("Please enter a valid 4-letter passkey");
     } else {
       // Simulate signin process
       simulateSignin();
@@ -1284,15 +1276,13 @@ function initSigninValidation() {
 
   function validatePasskey(input) {
     const value = input.value.trim();
-    const wordCount = value
-      .split(/\s+/)
-      .filter((word) => word.length > 0).length;
 
     // Clear previous error
     clearPasskeyError(input);
 
-    if (value && wordCount !== 4) {
-      showPasskeyError(input, "Passkey must be exactly 4 words");
+    // Check for exactly 4 letters (no spaces, only letters)
+    if (value && (value.length !== 4 || !/^[A-Za-z]{4}$/.test(value))) {
+      showPasskeyError(input, "Passkey must be exactly 4 letters (A-Z)");
       return false;
     }
 
@@ -1352,16 +1342,13 @@ function initSigninValidation() {
 
     // Check if field is empty
     if (!value) {
-      speakFeedback("Please enter your passkey");
+      speakFeedback("Please enter your 4-letter passkey");
       return false;
     }
 
-    // Check word count
-    const wordCount = value
-      .split(/\s+/)
-      .filter((word) => word.length > 0).length;
-    if (wordCount !== 4) {
-      speakFeedback("Passkey must be exactly 4 words");
+    // Check for exactly 4 letters
+    if (value.length !== 4 || !/^[A-Za-z]{4}$/.test(value)) {
+      speakFeedback("Passkey must be exactly 4 letters (A-Z)");
       return false;
     }
 
@@ -1422,11 +1409,8 @@ function initSigninValidation() {
 
   function simulateAuthentication(passkey) {
     // This is a simulation - in a real app, you would check against a database
-    // For demo purposes, accept any 4-word passkey
-    const wordCount = passkey
-      .split(/\s+/)
-      .filter((word) => word.length > 0).length;
-    return wordCount === 4;
+    // For demo purposes, accept any 4-letter word
+    return passkey.length === 4 && /^[A-Za-z]{4}$/.test(passkey);
   }
 
   // Add CSS for validation
@@ -1546,7 +1530,7 @@ function initAccessibilityFeatures() {
   document.head.appendChild(styleSheet);
 }
 
-// 4. VOICE GUIDANCE SYSTEM
+// 4. VOICE GUIDANCE SYSTEM - UPDATED FOR 4-LETTER PASSKEY
 function initVoiceGuidance() {
   // Create status message element
   let statusMessage = document.getElementById("voiceStatus");
@@ -1600,27 +1584,25 @@ function initVoiceGuidance() {
     }
   }
 
-  // Provide guidance for passkey input
+  // Provide guidance for passkey input - UPDATED
   const passkeyInput = document.querySelector(".passkey-input input");
   if (passkeyInput) {
     passkeyInput.addEventListener("focus", function () {
-      speakFeedback("Enter your four word passkey or use voice input");
+      speakFeedback("Enter your 4-letter passkey or use voice input");
     });
 
     passkeyInput.addEventListener("input", function () {
-      const wordCount = this.value
-        .trim()
-        .split(/\s+/)
-        .filter((word) => word.length > 0).length;
+      const value = this.value.trim();
+      const length = value.length;
 
-      if (wordCount === 1) {
-        speakFeedback("One word entered");
-      } else if (wordCount === 2) {
-        speakFeedback("Two words entered");
-      } else if (wordCount === 3) {
-        speakFeedback("Three words entered");
-      } else if (wordCount === 4) {
-        speakFeedback("Four words entered. Ready to sign in");
+      if (length === 1) {
+        speakFeedback("One letter entered");
+      } else if (length === 2) {
+        speakFeedback("Two letters entered");
+      } else if (length === 3) {
+        speakFeedback("Three letters entered");
+      } else if (length === 4) {
+        speakFeedback("Four letters entered. Ready to sign in");
       }
     });
   }
@@ -1810,8 +1792,8 @@ function initVoiceInput() {
 
     // Simulate voice recognition
     setTimeout(() => {
-      // Demo passkey
-      const demoPasskey = "correct horse battery staple";
+      // Demo passkey - updated to 4 letters
+      const demoPasskey = "ABCD";
       passkeyInput.value = demoPasskey;
       passkeyInput.dispatchEvent(new Event("input"));
 
